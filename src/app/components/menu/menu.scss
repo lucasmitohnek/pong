@@ -1,0 +1,106 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  font-family: 'jersey 10';
+  background-color: rgb(43, 43, 43);
+  background-image: url(/bg.gif);
+  background-blend-mode: soft-light;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+#titel {
+  font-family: 'jersey 10';
+  font-size: 100pt;
+  color: rgb(255, 255, 255);
+  text-shadow: 5px 5px black;
+  min-width: 100px;
+  margin: 10px 0;
+  filter: drop-shadow(0 0 20px black);
+}
+
+#lvlselector {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#lvl1 {
+  background-image: url(/standard.gif);
+  background-size: cover;
+  background-position-y: -70px;
+}
+#lvl2 {
+  background-image: url(/vscom.gif);
+  background-size: cover;
+  background-position-y: -40px;
+}
+#lvl3 {
+  background-image: url(/single.gif);
+  background-size: cover;
+  background-position-y: -70px;
+}
+
+.lvl {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: rgb(255, 255, 255);
+  width: 32rem;
+  height: 10rem;
+  font-family: 'jersey 10';
+  font-size: 32pt;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  text-shadow: 5px 5px black;
+  background-blend-mode: luminosity;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 20px black);
+  transition: 0.2s ease, mix-blend-mode 2s ease;
+  &:hover {
+    scale: 105%;
+    background-blend-mode: normal;
+  }
+}
+
+#transitionwhite {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+}
+
+.blend-out {
+  animation: blend-out 1s ease-out;
+}
+@keyframes blend-out {
+  from {
+    opacity: 0%;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 100%;
+    backdrop-filter: blur(20px);
+  }
+}
+
+.blend-in {
+  animation: blend-in 1s ease-in;
+}
+@keyframes blend-in {
+  from {
+    opacity: 100%;
+    backdrop-filter: blur(20px);
+  }
+  to {
+    opacity: 0%;
+    backdrop-filter: blur(0px);
+  }
+}

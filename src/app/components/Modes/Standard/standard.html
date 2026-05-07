@@ -1,0 +1,42 @@
+<h1 id="titel">PONG!</h1>
+<div id="game">
+  <div id="score">
+    <h1 id="scorep1">{{ p1points }}</h1>
+    <h1 id="scorep2">{{ p2points }}</h1>
+  </div>
+  <canvas id="ca" #hashca>Fallback Content</canvas>
+</div>
+<div id="buttons">
+  @if(!winnerp1 && !winnerp2){ @if (showstartbutton) {
+  <button id="startbutton" (click)="start()">PRESS START</button>
+  } @else { @if (showpausebutton) {<button id="pausebutton" (click)="pause()">PAUSE</button>} @else
+  {<button id="resumebutton" (click)="resume()">RESUME</button>}
+  <button (click)="restart()">RESTART</button>
+  }} @else {<button (click)="restart()">RESTART</button>}
+</div>
+<div id="gifs">
+  @if (winnerp1) {
+  <img src="p1wins.gif" alt="p1 gewinnt" />} @else if (winnerp2) {
+  <img src="p2wins.gif" alt="p2 gewinnt" />
+  }@else if (ball.speedX > 38 || ball.speedX < -38) {
+  <img id="speed" src="lightspeed.gif" alt="junge wie schnell" style="opacity: 75%" />
+  } @else if (ball.speedX > 35 || ball.speedX < -35) {
+  <img id="speed" src="lightspeed.gif" alt="junge wie schnell" style="opacity: 60%" />
+  } @else if (ball.speedX > 32 || ball.speedX < -32) {
+  <img id="speed" src="lightspeed.gif" alt="junge wie schnell" style="opacity: 45%" />
+  } @else if (ball.speedX > 27 || ball.speedX < -27) {
+  <img id="speed" src="lightspeed.gif" alt="junge wie schnell" style="opacity: 35%" />
+  }@else if (ball.speedX > 25 || ball.speedX < -25) {
+  <img id="speed" src="lightspeed.gif" alt="junge wie schnell" style="opacity: 25%" />
+  }@else if (ball.speedX > 23 || ball.speedX < -23) {
+  <img id="speed" src="lightspeed.gif" alt="junge wie schnell" style="opacity: 15%" />
+  } @else if (ball.speedX > 20 || ball.speedX < -20) {
+  <img id="speed" src="lightspeed.gif" alt="junge wie schnell" style="opacity: 5%" />
+  }
+</div>
+<a id="home" href="javascript:void" (click)="home()">⌂ PONG!</a>
+@if (leave) {
+<div id="transitionwhite" animate.enter="blend-out"></div>
+}@if (pageload) {
+<div id="transitionwhite" animate.enter="blend-in"></div>
+}

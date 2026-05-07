@@ -1,0 +1,32 @@
+<h1 id="titel">SQUASH!</h1>
+<div id="game">
+  <div id="state">
+    <span>HIGHSCORE: 34s</span><br />
+    <span>DEIN SCORE: {{ temphighscore }}s</span>
+    <p id="strikes">STRIKES: {{ strikes }}</p>
+    <span>Runde 1: {{ secondsr1 }}s</span><br />
+    <span>Runde 2: {{ secondsr2 }}s</span><br />
+    <span>Runde 3: {{ secondsr3 }}s</span>
+  </div>
+  <canvas id="ca" #hashca>Fallback Content</canvas>
+</div>
+<div id="buttons">
+  @if(!winnerp1){ @if (showstartbutton) {
+  <button id="startbutton" (click)="start()">PRESS START</button>
+  } @else { @if (showpausebutton) {<button id="pausebutton" (click)="pause()">PAUSE</button>} @else
+  {<button id="resumebutton" (click)="resume()">RESUME</button>}
+  <button (click)="restart()">RESTART</button>
+  }} @else {<button (click)="restart()">RESTART</button>}
+</div>
+<div id="gifs">
+  @if(winnerp1){ @if (temphighscore < 20) {
+  <img src="lost.gif" alt="Du hast verloren!" />} @else if (temphighscore >= 20 && temphighscore <=
+  34) { <img src="goodone.gif" alt="Nicht schlecht!" />} @else if (temphighscore >= 34) {
+  <img src="highscore.gif" alt="DAMN!" />}}
+</div>
+<a id="home" href="javascript:void" (click)="home()">⌂ PONG!</a>
+@if (leave) {
+<div id="transitionwhite" animate.enter="blend-out"></div>
+}@if (pageload) {
+<div id="transitionwhite" animate.enter="blend-in"></div>
+}
