@@ -1,0 +1,142 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/bg.gif);
+  background-size: cover;
+}
+
+#titel {
+  z-index: 10;
+  font-family: 'jersey 10';
+  font-size: 100pt;
+  color: rgb(255, 255, 255);
+  text-shadow: 5px 5px black;
+  min-width: 100px;
+  margin: 10px 0;
+  filter: drop-shadow(0 0 20px black);
+}
+
+#game {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  width: 100vw;
+}
+
+#score {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 20vh;
+  align-items: center;
+  h1 {
+    padding: 0 20vw 0;
+    font-family: 'jersey 10';
+    font-size: 100pt;
+    color: rgba(255, 255, 255, 0.25);
+    min-width: 100px;
+  }
+}
+
+canvas {
+  border: 1px solid red;
+  background-color: black;
+  margin: 0;
+  width: max-content;
+  height: max-content;
+}
+
+button {
+  font-family: 'jersey 10';
+  font-size: 41px;
+  border-color: rgb(70, 70, 70);
+  background-color: black;
+  color: white;
+  z-index: 10;
+  transition: 0.2s;
+  &:hover {
+    border-color: red;
+  }
+  &:active {
+    background-color: rgb(124, 0, 0);
+  }
+}
+
+#buttons {
+  width: 15vw;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+#gifs {
+  display: flex;
+  top: 43%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  img {
+    scale: 250%;
+    box-shadow: 0 0 0 999px hsla(0, 0%, 0%, 0.69);
+  }
+}
+
+#home {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: 'jersey 10';
+  font-size: 20pt;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-shadow: 5px 5px black;
+  min-width: 100px;
+  margin: 10px 0;
+  filter: drop-shadow(0 0 20px black);
+}
+
+#transitionwhite {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+}
+
+.blend-out {
+  animation: blend-out 1s ease-out;
+}
+@keyframes blend-out {
+  from {
+    opacity: 0%;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 100%;
+    backdrop-filter: blur(20px);
+  }
+}
+
+.blend-in {
+  animation: blend-in 1s ease-in;
+}
+@keyframes blend-in {
+  from {
+    opacity: 100%;
+    backdrop-filter: blur(20px);
+  }
+  to {
+    opacity: 0%;
+    backdrop-filter: blur(0px);
+  }
+}

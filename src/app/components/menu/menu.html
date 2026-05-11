@@ -1,0 +1,11 @@
+<h1 id="titel" (click)="selection1()">PONG!</h1>
+<div id="lvlselector">
+  <a class="lvl" id="lvl1" href="javascript:void" (click)="selection1()">STANDARD MULTIPLAYER</a>
+  <!-- <a class="lvl" id="lvl2" href="javascript:void" (click)="selection2()">STANDARD VS COM</a> -->
+  <a class="lvl" id="lvl3" href="javascript:void" (click)="selection3()">SQUASH</a>
+</div>
+@if (leave) {
+<div id="transitionwhite" animate.enter="blend-out"></div>
+}@if (pageload) {
+<div id="transitionwhite" animate.enter="blend-in"></div>
+}
