@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "github-build": "ng build --prod --base-href 'https://lucasmitohnek.github.io/pong/'"
+    "test": "ng test"
   },
   "prettier": {
     "printWidth": 100,
