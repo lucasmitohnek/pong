@@ -7,7 +7,7 @@
   text-align: center;
   font-family: 'jersey 10';
   background-color: rgb(43, 43, 43);
-  background-image: url('/assets/bg.gif');
+  background-image: url('./bg.gif');
   background-blend-mode: soft-light;
   background-size: cover;
   width: 100vw;
@@ -31,12 +31,12 @@
 }
 
 #lvl1 {
-  background-image: url('/assets/standard.gif');
+  background-image: url('./standard.gif');
   background-size: cover;
   background-position-y: -70px;
 }
 #lvl2 {
-  background-image: url('/assets/vscom.gif');
+  background-image: url('./vscom.gif');
   background-size: cover;
   background-position-y: -40px;
 }
