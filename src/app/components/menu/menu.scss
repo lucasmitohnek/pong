@@ -7,7 +7,7 @@
   text-align: center;
   font-family: 'jersey 10';
   background-color: rgb(43, 43, 43);
-  background-image: url('./bg.gif');
+  background-image: url('./public/bg.gif');
   background-blend-mode: soft-light;
   background-size: cover;
   width: 100vw;
@@ -41,7 +41,7 @@
   background-position-y: -40px;
 }
 #lvl3 {
-  background-image: url(/single.gif);
+  background-image: url('./single.gif');
   background-size: cover;
   background-position-y: -70px;
 }
