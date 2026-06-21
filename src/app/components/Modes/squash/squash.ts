@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-squash',
@@ -7,6 +8,8 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
   styleUrl: './squash.scss',
 })
 export class Squash implements OnInit {
+  constructor(private router: Router) {}
+
   @ViewChild('hashca', { static: true }) ca!: ElementRef<HTMLCanvasElement>;
 
   // ⬇️⬇️⬇️ VARIABLE BLOCK !!! VARIABLE BLOCK !!! VARIABLE BLOCK !!! VARIABLE BLOCK !!! VARIABLE BLOCK !!! VARIABLE BLOCK !!! ⬇️⬇️⬇️
@@ -287,10 +290,13 @@ export class Squash implements OnInit {
 
   home() {
     this.leave = !this.leave;
-    setTimeout(function () {
-      window.open('/', '_self');
+
+    setTimeout(() => {
+      this.router.navigate(['']);
     }, 1000);
+
     this.accept.play();
+
     setTimeout(() => {
       this.leave = !this.leave;
     }, 1000);

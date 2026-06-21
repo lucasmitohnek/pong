@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-standard',
@@ -7,6 +8,8 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
   styleUrl: './standard.scss',
 })
 export class Standard implements OnInit {
+  constructor(private router: Router) {}
+
   @ViewChild('hashca', { static: true }) ca!: ElementRef<HTMLCanvasElement>;
 
   p1: number = 280;
@@ -246,10 +249,13 @@ export class Standard implements OnInit {
 
   home() {
     this.leave = !this.leave;
-    setTimeout(function () {
-      window.open('/', '_self');
+
+    setTimeout(() => {
+      this.router.navigate(['']);
     }, 1000);
+
     this.accept.play();
+
     setTimeout(() => {
       this.leave = !this.leave;
     }, 1000);
